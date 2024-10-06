@@ -21,9 +21,9 @@ jobs:
       # Build the Docker image
       - name: Build the Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/word-search-app:latest -f word-search-app/Dockerfile word-search-app
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/word_search_app:latest -f word_search_app/Dockerfile word_search_app
 
       # Push the Docker image to Docker Hub
       - name: Push the Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/word-search-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/word_search_app:latest
