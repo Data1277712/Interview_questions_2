@@ -3,7 +3,7 @@ name: Build and Push Docker Image char
 on:
   push:
     branches: 
-      - main,feature/word_search_app
+      - [main,feature/word_search_app]
 
 jobs:
   build:
