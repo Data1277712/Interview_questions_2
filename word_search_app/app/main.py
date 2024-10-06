@@ -31,3 +31,7 @@ async def search_words(request: Request):
     char = form.get("char")
     words_containing_char = words_with_char(char, words_list)
     return templates.TemplateResponse("index.html", {"request": request, "words": words_containing_char})
+# app/main.py
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=80)
