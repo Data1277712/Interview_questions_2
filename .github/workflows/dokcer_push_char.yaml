@@ -1,9 +1,9 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Image char
 
 on:
   push:
     branches: 
-      - main
+      - main,feature/word_search_app
 
 jobs:
   build:
