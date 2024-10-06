@@ -1,4 +1,30 @@
-name: Build json load Docker Image CI
+name: Run JSON Load Script
 
+on:
+  push:
+    branches:
+      - main  # Change to your default branch name if necessary
 
+jobs:
+  run-json-load:
+    runs-on: ubuntu-latest
 
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Change to your required Python version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4  # Add any other dependencies your script needs
+
+      # Run the JSON load script
+      - name: Run json_load.py
+        run: python json_load.py
