@@ -2,7 +2,7 @@ name: my first workflow file creation
 on:
    push:
       branches:
-          -main
+          - main
 jobs:
    run-json-load:
       runs-on: ubuntu-latest
