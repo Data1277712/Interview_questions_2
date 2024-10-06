@@ -27,3 +27,8 @@ jobs:
       - name: Push the Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/word_search_app:latest
+
+      # Run the Docker container
+      - name: Run the Docker container
+        run: |
+          docker run -d -p 8000:80 --name word-search-app-container ${{ secrets.DOCKER_USERNAME }}/word_search_app:latest
